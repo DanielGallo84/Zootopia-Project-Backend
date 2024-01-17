@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.vero_slaves.zootopia.interfaces.IGenericService;
+import org.vero_slaves.zootopia.interfaces.IGenericFullService;
 import org.vero_slaves.zootopia.messages.Message;
 import org.vero_slaves.zootopia.models.Animal;
 import org.vero_slaves.zootopia.services.AnimalService;
 
 
 @RestController
-@RequestMapping(path = "${api-endpoint}/tickets")
+@RequestMapping(path = "${api-endpoint}/animals")
 public class AnimalController {
 
-    IGenericService<Animal> service;
+    IGenericFullService<Animal> service;
 
     public AnimalController(AnimalService service) {
         this.service = service;
@@ -31,39 +31,39 @@ public class AnimalController {
     @GetMapping(path = "")
     public List<Animal> index() {
 
-        List<Animal> tickets = service.getAll();
-        return tickets;
+        List<Animal> animals = service.getAll();
+        return animals;
 
     }
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<Animal> getOneById(@PathVariable("id") Long id) throws Exception {
 
-        Animal ticket = service.getById(id);
+        Animal animal = service.getById(id);
 
-        return ResponseEntity.status(HttpStatusCode.valueOf(200)).body(ticket);
+        return ResponseEntity.status(HttpStatusCode.valueOf(200)).body(animal);
     }
 
     @GetMapping(path = "/{name}")
     public ResponseEntity<Animal> getOneByName(@PathVariable("name") String name) throws Exception {
 
-        Animal ticket = service.getByName(name);
+        Animal animal = service.getByName(name);
 
-        return ResponseEntity.status(HttpStatusCode.valueOf(200)).body(ticket);
+        return ResponseEntity.status(HttpStatusCode.valueOf(200)).body(animal);
     }
 
     @PostMapping(path = "")
-    public ResponseEntity<Animal> create(@RequestBody Animal ticket) {
+    public ResponseEntity<Animal> create(@RequestBody Animal animal) {
 
-        Animal newAnimal = service.save(ticket);
+        Animal newAnimal = service.save(animal);
 
         return ResponseEntity.status(201).body(newAnimal);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Animal> update(@PathVariable("id") Long id, @RequestBody Animal ticket) throws Exception {
+    public ResponseEntity<Animal> update(@PathVariable("id") Long id, @RequestBody Animal animal) throws Exception {
 
-        Animal updatedAnimal = service.update(id, ticket);
+        Animal updatedAnimal = service.update(id, animal);
 
         return ResponseEntity.status(200).body(updatedAnimal);
     }

@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.vero_slaves.zootopia.messages.Message;
 
-public interface IGenericService<T> {
+public interface IGenericFullService<T> {
     public List<T> getAll();
     public T getById(Long id) throws Exception;
     public T getByName(String name) throws Exception;

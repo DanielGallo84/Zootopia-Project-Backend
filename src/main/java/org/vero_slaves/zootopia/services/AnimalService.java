@@ -4,13 +4,13 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.vero_slaves.zootopia.exceptions.AnimalNotFoundException;
-import org.vero_slaves.zootopia.interfaces.IGenericService;
+import org.vero_slaves.zootopia.interfaces.IGenericFullService;
 import org.vero_slaves.zootopia.messages.Message;
 import org.vero_slaves.zootopia.models.Animal;
 import org.vero_slaves.zootopia.repositories.AnimalRepository;
 
 @Service
-public class AnimalService implements IGenericService<Animal> {
+public class AnimalService implements IGenericFullService<Animal> {
     
     AnimalRepository repository;
 
