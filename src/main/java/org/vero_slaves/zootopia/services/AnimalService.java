@@ -29,6 +29,12 @@ public class AnimalService implements IGenericService<Animal> {
         return animal;
     }
 
+    public Animal getByName(String name) throws Exception {
+        Animal animal = repository.findByName(name).orElseThrow(() -> new AnimalNotFoundException("Animal not found"));
+
+        return animal;
+    }
+
     public Animal save(Animal animal) {
 
         Animal newAnimal = new Animal();
