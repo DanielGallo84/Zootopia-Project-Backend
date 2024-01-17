@@ -55,6 +55,9 @@ public class Animal {
     private Gender gender;
     
     
+    public Animal() {
+    }
+
     public Animal(String animal_name, Date admission_date, byte[] photo, Type type, Family family, Gender gender) {
         this.animal_name = animal_name;
         this.admission_date = admission_date;
