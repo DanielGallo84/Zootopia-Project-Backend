@@ -29,7 +29,7 @@ public class Animal {
     private Long id;
 
     @Column
-    private String animal_name;
+    private String name;
 
     @Column(name = "admission_date", nullable = false, updatable = false)
     @CreatedDate
@@ -58,8 +58,8 @@ public class Animal {
     public Animal() {
     }
 
-    public Animal(String animal_name, Date admission_date, byte[] photo, Type type, Family family, Gender gender) {
-        this.animal_name = animal_name;
+    public Animal(String name, Date admission_date, byte[] photo, Type type, Family family, Gender gender) {
+        this.name = name;
         this.admission_date = admission_date;
         this.photo = photo;
         this.type = type;
@@ -78,13 +78,13 @@ public class Animal {
     }
 
 
-    public String getAnimal_name() {
-        return animal_name;
+    public String getname() {
+        return name;
     }
 
 
-    public void setAnimal_name(String animal_name) {
-        this.animal_name = animal_name;
+    public void setname(String name) {
+        this.name = name;
     }
 
 
