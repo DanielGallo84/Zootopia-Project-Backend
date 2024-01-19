@@ -39,9 +39,8 @@ public class Animal {
     @Column(name = "photo", columnDefinition="BLOB")
     private byte[] photo;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     @JoinColumn(name = "type_id")
-    @JsonBackReference
     private Type type;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
