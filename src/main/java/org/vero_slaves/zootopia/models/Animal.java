@@ -53,8 +53,7 @@ public class Animal {
     @JoinColumn(name = "gender_id")
     @JsonBackReference
     private Gender gender;
-    
-    
+
     public Animal() {
     }
 
