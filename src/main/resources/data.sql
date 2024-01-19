@@ -11,6 +11,7 @@ INSERT INTO families (id_family, family) VALUES (default, 'Cánidos ');
 INSERT INTO families (id_family, family) VALUES (default, 'Reptiles');
 INSERT INTO families (id_family, family) VALUES (default, 'Mustelids');
 INSERT INTO families (id_family, family) VALUES (default, 'Leporidae');
+INSERT INTO families (id_family, family) VALUES (default, 'Aves');
 
 /* Genders */
 INSERT INTO genders (id_gender, gender) VALUES (default, 'Male');
