@@ -2,7 +2,6 @@ package org.vero_slaves.zootopia.models;
 
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
@@ -25,7 +24,7 @@ public class Type {
     @Column
     private String type;
 
-    @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "type", cascade = CascadeType.ALL)
     private Set<Animal> animals;
 

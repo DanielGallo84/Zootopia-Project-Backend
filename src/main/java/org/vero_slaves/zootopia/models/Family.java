@@ -2,7 +2,7 @@ package org.vero_slaves.zootopia.models;
 
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -24,7 +24,7 @@ public class Family {
     @Column
     private String family;
 
-    @JsonManagedReference
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "family", cascade = CascadeType.ALL)
     private Set<Animal> animals;
 

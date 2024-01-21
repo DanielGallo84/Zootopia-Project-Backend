@@ -3,7 +3,7 @@ INSERT INTO types (id_type, type) VALUES (default, 'Capybara');
 INSERT INTO types (id_type, type) VALUES (default, 'Scorpion');
 INSERT INTO types (id_type, type) VALUES (default, 'Rabbit');
 INSERT INTO types (id_type, type) VALUES (default, 'Red Panda');
-INSERT INTO types (id_type, type) VALUES (default, 'León');
+INSERT INTO types (id_type, type) VALUES (default, 'Lion');
 
 /* Families */
 INSERT INTO families (id_family, family) VALUES (default, 'Félidos');
