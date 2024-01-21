@@ -69,12 +69,20 @@ public class AnimalService implements IGenericFullService<Animal> {
     public Animal update(Long id, Animal animal) throws Exception {
         
         Animal updatingAnimal = repository.findById(id).orElseThrow(() -> new AnimalNotFoundException("Animal not found"));
+
+        Type type = typeRepository.findByType(animal.getTypeName()).orElse(new Type(animal.getTypeName()));
+        typeRepository.save(type);
+
+        Family family = familyRepository.findByFamily(animal.getFamilyName()).orElseThrow(() -> new FamilyNotFoundException("Family not found"));
+
+        Gender gender = genderRepository.findByGender(animal.getGenderName()).orElseThrow(() -> new GenderNotFoundException("Gender not found"));
+        typeRepository.save(type);
         
         updatingAnimal.setName(animal.getName());
         updatingAnimal.setPhoto(animal.getPhoto());
-        updatingAnimal.setType(animal.getType());
-        updatingAnimal.setFamily(animal.getFamily());
-        updatingAnimal.setGender(animal.getGender());
+        updatingAnimal.setType(type);
+        updatingAnimal.setFamily(family);
+        updatingAnimal.setGender(gender);
 
         Animal updatedAnimal = repository.save(updatingAnimal);
         
