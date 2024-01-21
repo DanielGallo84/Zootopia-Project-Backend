@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.vero_slaves.zootopia.exceptions.AnimalNotFoundException;
 import org.vero_slaves.zootopia.exceptions.FamilyNotFoundException;
 import org.vero_slaves.zootopia.exceptions.GenderNotFoundException;
-import org.vero_slaves.zootopia.exceptions.TypeNotFoundException;
 import org.vero_slaves.zootopia.interfaces.IGenericFullService;
 import org.vero_slaves.zootopia.messages.Message;
 import org.vero_slaves.zootopia.models.Animal;
@@ -53,7 +52,9 @@ public class AnimalService implements IGenericFullService<Animal> {
 
     public Animal save(Animal animal) {
 
-        Type type = typeRepository.findByType(animal.getTypeName()).orElseThrow(() -> new TypeNotFoundException("Type not found"));
+        Type type = typeRepository.findByType(animal.getTypeName()).orElse(new Type(animal.getTypeName()));
+        typeRepository.save(type);
+        
         Family family = familyRepository.findByFamily(animal.getFamilyName()).orElseThrow(() -> new FamilyNotFoundException("Family not found"));
         Gender gender = genderRepository.findByGender(animal.getGenderName()).orElseThrow(() -> new GenderNotFoundException("Gender not found"));
 

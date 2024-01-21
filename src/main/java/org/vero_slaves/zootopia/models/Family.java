@@ -25,15 +25,14 @@ public class Family {
     private String family;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToMany(mappedBy = "family", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "family", cascade=CascadeType.ALL)
     private Set<Animal> animals;
 
     public Family() {
     }
 
-    public Family(String family, Set<Animal> animals) {
+    public Family(String family) {
         this.family = family;
-        this.animals = animals;
     }
 
     public Long getId() {

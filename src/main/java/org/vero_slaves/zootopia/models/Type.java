@@ -25,15 +25,14 @@ public class Type {
     private String type;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToMany(mappedBy = "type", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "type", cascade=CascadeType.ALL)
     private Set<Animal> animals;
 
     public Type() {
     }
 
-    public Type(String type, Set<Animal> animals) {
+    public Type(String type) {
         this.type = type;
-        this.animals = animals;
     }
 
     public Long getId() {

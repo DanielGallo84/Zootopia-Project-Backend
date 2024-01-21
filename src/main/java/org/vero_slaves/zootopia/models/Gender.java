@@ -25,15 +25,14 @@ public class Gender {
     private String gender;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToMany(mappedBy = "gender", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "gender", cascade=CascadeType.ALL)
     private Set<Animal> animals;
 
     public Gender() {
     }
 
-    public Gender(String gender, Set<Animal> animals) {
+    public Gender(String gender) {
         this.gender = gender;
-        this.animals = animals;
     }
 
     public Long getId() {
