@@ -36,7 +36,7 @@ public class AnimalController {
 
     }
 
-    @GetMapping(path = "/{id}")
+    @GetMapping(path = "/getById/{id}")
     public ResponseEntity<Animal> getOneById(@PathVariable("id") Long id) throws Exception {
 
         Animal animal = service.getById(id);
@@ -44,7 +44,7 @@ public class AnimalController {
         return ResponseEntity.status(HttpStatusCode.valueOf(200)).body(animal);
     }
 
-    @GetMapping(path = "/{name}")
+    @GetMapping(path = "/getByName/{name}")
     public ResponseEntity<Animal> getOneByName(@PathVariable("name") String name) throws Exception {
 
         Animal animal = service.getByName(name);
