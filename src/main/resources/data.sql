@@ -6,12 +6,12 @@ INSERT INTO types (id_type, type) VALUES (default, 'Red Panda');
 INSERT INTO types (id_type, type) VALUES (default, 'Lion');
 
 /* Families */
-INSERT INTO families (id_family, family) VALUES (default, 'Félidos');
-INSERT INTO families (id_family, family) VALUES (default, 'Cánidos ');
+INSERT INTO families (id_family, family) VALUES (default, 'Felids');
+INSERT INTO families (id_family, family) VALUES (default, 'Canids ');
 INSERT INTO families (id_family, family) VALUES (default, 'Reptiles');
 INSERT INTO families (id_family, family) VALUES (default, 'Mustelids');
 INSERT INTO families (id_family, family) VALUES (default, 'Leporidae');
-INSERT INTO families (id_family, family) VALUES (default, 'Aves');
+INSERT INTO families (id_family, family) VALUES (default, 'Birds');
 
 /* Genders */
 INSERT INTO genders (id_gender, gender) VALUES (default, 'Male');
