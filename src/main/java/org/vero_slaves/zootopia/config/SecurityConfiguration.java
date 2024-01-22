@@ -52,6 +52,8 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.GET, endpoint + "/login").hasAnyRole("USER","ADMIN")
                         .requestMatchers(HttpMethod.GET, endpoint + "/users").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, endpoint + "/animals").permitAll()
+                        .requestMatchers(HttpMethod.PUT, endpoint + "/animals").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, endpoint + "/animals").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, endpoint + "/animals").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .userDetailsService(jpaUserDetailsService)
