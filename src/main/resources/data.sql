@@ -7,7 +7,7 @@ INSERT INTO types (id_type, type) VALUES (default, 'Lion');
 
 /* Families */
 INSERT INTO families (id_family, family) VALUES (default, 'Felids');
-INSERT INTO families (id_family, family) VALUES (default, 'Canids ');
+INSERT INTO families (id_family, family) VALUES (default, 'Canids');
 INSERT INTO families (id_family, family) VALUES (default, 'Reptiles');
 INSERT INTO families (id_family, family) VALUES (default, 'Mustelids');
 INSERT INTO families (id_family, family) VALUES (default, 'Leporidae');
